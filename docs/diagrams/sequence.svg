@@ -1,0 +1,58 @@
+<svg width="680" height="380" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Sequence diagram</title>
+<desc>Student requests a study plan; CLI calls SearchAgent, KnowledgeBase, and RiskClassifier in turn, then returns a combined plan to the student.</desc>
+<rect x="0" y="0" width="680" height="380" fill="#FFFFFF"/>
+<defs>
+<marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Lifeline headers -->
+<g font-family="sans-serif" font-size="13" fill="#2C2C2A" text-anchor="middle">
+<rect x="20" y="20" width="100" height="34" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="70" y="41">Student</text>
+
+<rect x="180" y="20" width="100" height="34" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="230" y="41">CLI</text>
+
+<rect x="340" y="20" width="100" height="34" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="390" y="41">SearchAgent</text>
+
+<rect x="480" y="20" width="100" height="34" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="530" y="41">KnowledgeBase</text>
+
+<rect x="600" y="20" width="60" height="34" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+<text x="630" y="41" font-size="11">ML</text>
+</g>
+
+<!-- Lifelines -->
+<line x1="70" y1="54" x2="70" y2="360" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="230" y1="54" x2="230" y2="360" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="390" y1="54" x2="390" y2="360" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="530" y1="54" x2="530" y2="360" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="630" y1="54" x2="630" y2="360" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 3"/>
+
+<g font-family="sans-serif" font-size="12" fill="#2C2C2A">
+<line x1="70" y1="80" x2="220" y2="80" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arrow3)"/>
+<text x="75" y="74">request_plan(subjects, deadlines)</text>
+
+<line x1="230" y1="120" x2="380" y2="120" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arrow3)"/>
+<text x="235" y="114">plan_schedule()</text>
+<line x1="390" y1="150" x2="240" y2="150" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow3)"/>
+<text x="235" y="144">ordered plan</text>
+
+<line x1="230" y1="180" x2="520" y2="180" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arrow3)"/>
+<text x="235" y="174">what_to_study_before()</text>
+<line x1="530" y1="210" x2="240" y2="210" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow3)"/>
+<text x="235" y="204">missing prerequisites</text>
+
+<line x1="230" y1="240" x2="620" y2="240" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arrow3)"/>
+<text x="235" y="234">predict_risk(student_features)</text>
+<line x1="630" y1="270" x2="240" y2="270" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow3)"/>
+<text x="235" y="264">risk label</text>
+
+<line x1="230" y1="310" x2="80" y2="310" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow3)"/>
+<text x="235" y="304">final study plan + risk notes</text>
+</g>
+</svg>
